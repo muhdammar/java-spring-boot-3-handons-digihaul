@@ -1,31 +1,24 @@
 services:
-  db:
-    container_name: postgres-sprint-boot-tutorial
-    image: postgres:latest
-    environment:
-      POSTGRES_DB: 'postgres_db' #create db name
-      POSTGRES_USER: amigoscode
-      POSTGRES_PASSWORD: password
-      PGDATA: /data/postgres
-    volumes:
-      - db:/data/postgres
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-db-21-slim
     ports:
-      - "5332:5432"
-    networks:
-      - db
-    restart: unless-stopped
-
-networks:
-  db:
-    driver: bridge
+      - "1521:1521"
+    environment:
+      - ORACLE_PASSWORD=Oracle2026
+    volumes:
+      - oracle-data:/opt/oracle-21/oradata
+    healthcheck:
+      test: ["CMD-SHELL", "sqlplus -s sys/Oracle2026@localhost:1521/XE as sysdba <<< 'SELECT 1 FROM DUAL;'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 volumes:
-  db:
+  oracle-data:
 
-
-#manually configure database name (run into db server)
-#docker compose ps (list all docker container)
-#docker exec -it db_name_instance bash (to move inside postgres server)
-
-#psql -U amigoscode (sign in to postgresdb)
-#\c db_name (connect to specific db)
+  #manually configure database name (run into db server)
+  #docker compose up -d (Start everything)
+  #docker compose ps (list all docker container)
+  #docker exec -it db_name_instance bash (to move inside postgres server)
+  #docker compose logs -f oracle-db -Check logs
