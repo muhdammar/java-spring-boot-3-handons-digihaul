@@ -1,0 +1,31 @@
+services:
+  db:
+    container_name: postgres-sprint-boot-tutorial
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: 'postgres_db' #create db name
+      POSTGRES_USER: amigoscode
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5332:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
+
+
+#manually configure database name (run into db server)
+#docker compose ps (list all docker container)
+#docker exec -it db_name_instance bash (to move inside postgres server)
+
+#psql -U amigoscode (sign in to postgresdb)
+#\c db_name (connect to specific db)
