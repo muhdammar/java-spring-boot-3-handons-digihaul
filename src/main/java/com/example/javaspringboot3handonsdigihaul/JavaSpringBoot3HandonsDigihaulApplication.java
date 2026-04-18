@@ -1,4 +1,4 @@
-package com.ammar.javaspringboot3handonsdigihaul;
+package com.example.javaspringboot3handonsdigihaul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

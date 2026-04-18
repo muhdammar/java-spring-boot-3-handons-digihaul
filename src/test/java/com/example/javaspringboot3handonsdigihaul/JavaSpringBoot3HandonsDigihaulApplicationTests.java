@@ -1,4 +1,4 @@
-package com.ammar.javaspringboot3handonsdigihaul;
+package com.example.javaspringboot3handonsdigihaul;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
