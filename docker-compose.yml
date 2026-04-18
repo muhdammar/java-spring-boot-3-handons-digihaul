@@ -17,8 +17,12 @@ services:
 volumes:
   oracle-data:
 
-  #manually configure database name (run into db server)
-  #docker compose up -d (Start everything)
-  #docker compose ps (list all docker container)
-  #docker exec -it db_name_instance bash (to move inside postgres server)
-  #docker compose logs -f oracle-db -Check logs
+#manually configure database name (run into db server)
+#docker compose up -d (Start everything)
+#docker compose ps (list all docker container)
+#docker exec -it db_name_instance bash (to move inside postgres server)
+#docker compose logs -f oracle-db -Check logs
+
+#login to oracle
+#docker exec -it oracle-db-21-slim bash -lc "sqlplus system@//localhost:1521/XEPDB1"
+#docker exec -it oracle-db-21-slim sqlplus / as sysdba
