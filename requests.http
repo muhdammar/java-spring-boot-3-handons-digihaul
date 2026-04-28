@@ -25,3 +25,85 @@ Content-Type: application/json
   "name": "Ammar 5",
   "techStack": "react,vue, angularjs"
 }
+
+###
+# ============================================
+# Simple auth + shipment API samples
+# ============================================
+
+@baseUrl = http://localhost:8080
+@jwtToken = eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbW1hci51c2VyIiwiaWF0IjoxNzc3MzYxOTU3LCJleHAiOjE3Nzc0NDgzNTd9.WPG7i5Oqrz4rzH84bNryjKVRsy_G2TtYnsx1e0I5nmeKp73aojYfpgDgx3gBdIXNvDi6Um_aLrSQYslrFlULfA
+@shipmentId = c0df94b4-7ba0-41d2-a8c6-7fe989bb65b4
+
+### Register (USER)
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "username": "ammar.user",
+  "email": "ammar.user@example.com",
+  "password": "Password@123",
+  "fullName": "Ammar User",
+  "phoneNumber": "0123456789"
+}
+
+### Login
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "ammar.user",
+  "password": "Password@123"
+}
+
+### Logout (if you expose this endpoint)
+POST {{baseUrl}}/api/v1/auth/logout
+Authorization: Bearer {{jwtToken}}
+
+### List shipments (ADMIN = all, USER = own shipments)
+GET {{baseUrl}}/api/v1/shipments
+Authorization: Bearer {{jwtToken}}
+
+### Create shipment
+POST {{baseUrl}}/api/v1/shipments
+Authorization: Bearer {{jwtToken}}
+Content-Type: application/json
+
+{
+  "trackingNumber": "JNTMY202604280001",
+  "senderName": "Ammar Sender",
+  "senderPhone": "0111111111",
+  "senderAddressLine1": "No 1, Jalan Sender",
+  "senderAddressLine2": "Taman Maju",
+  "senderCity": "Shah Alam",
+  "senderState": "Selangor",
+  "senderPostcode": "40100",
+  "receiverName": "Ali Receiver",
+  "receiverPhone": "0199999999",
+  "receiverAddressLine1": "No 2, Jalan Receiver",
+  "receiverAddressLine2": "Taman Jaya",
+  "receiverCity": "Johor Bahru",
+  "receiverState": "Johor",
+  "receiverPostcode": "81100",
+  "parcelWeightKg": 1.25,
+  "parcelLengthCm": 20.00,
+  "parcelWidthCm": 15.00,
+  "parcelHeightCm": 10.00,
+  "remarks": "Handle with care"
+}
+
+### Shipment detail
+GET {{baseUrl}}/api/v1/shipments/{{shipmentId}}
+Authorization: Bearer {{jwtToken}}
+
+### Update shipment
+PUT {{baseUrl}}/api/v1/shipments/{{shipmentId}}
+Authorization: Bearer {{jwtToken}}
+Content-Type: application/json
+
+{
+  "receiverPhone": "0188888888",
+  "remarks": "Deliver after 5pm",
+  "status": "IN_TRANSIT"
+}
+

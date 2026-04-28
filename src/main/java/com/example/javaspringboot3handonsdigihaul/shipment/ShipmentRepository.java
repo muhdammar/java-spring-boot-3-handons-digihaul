@@ -11,6 +11,8 @@ public interface ShipmentRepository extends JpaRepository<Shipment, UUID> {
 
     Optional<Shipment> findByTrackingNumber(String trackingNumber);
 
+    Optional<Shipment> findByIdAndCreatedBy(UUID id, UserAccount userAccount);
+
     List<Shipment> findAllByCreatedBy(UserAccount userAccount);
 }
 
