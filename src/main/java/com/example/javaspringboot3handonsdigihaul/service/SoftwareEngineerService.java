@@ -1,5 +1,7 @@
-package com.example.javaspringboot3handonsdigihaul;
+package com.example.javaspringboot3handonsdigihaul.service;
 
+import com.example.javaspringboot3handonsdigihaul.entity.SoftwareEngineer;
+import com.example.javaspringboot3handonsdigihaul.repository.SoftwareEngineerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

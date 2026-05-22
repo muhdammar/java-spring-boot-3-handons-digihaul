@@ -1,5 +1,7 @@
-package com.example.javaspringboot3handonsdigihaul.auth;
+package com.example.javaspringboot3handonsdigihaul.entity;
 
+import com.example.javaspringboot3handonsdigihaul.enums.RoleName;
+import com.example.javaspringboot3handonsdigihaul.repository.RoleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

@@ -1,6 +1,6 @@
-package com.example.javaspringboot3handonsdigihaul.shipment.dto;
+package com.example.javaspringboot3handonsdigihaul.dto.shipment;
 
-import com.example.javaspringboot3handonsdigihaul.shipment.ShipmentStatus;
+import com.example.javaspringboot3handonsdigihaul.enums.ShipmentStatus;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

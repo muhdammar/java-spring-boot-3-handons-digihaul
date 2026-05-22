@@ -1,6 +1,6 @@
-package com.example.javaspringboot3handonsdigihaul.shipment;
+package com.example.javaspringboot3handonsdigihaul.entity;
 
-import com.example.javaspringboot3handonsdigihaul.auth.UserAccount;
+import com.example.javaspringboot3handonsdigihaul.enums.ShipmentStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -12,13 +12,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
-import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "digihaul_shipment_status_history")
 public class ShipmentStatusHistory {
 
     @Id

@@ -1,13 +1,18 @@
-package com.example.javaspringboot3handonsdigihaul.shipment;
+package com.example.javaspringboot3handonsdigihaul.service;
 
-import com.example.javaspringboot3handonsdigihaul.auth.RoleName;
-import com.example.javaspringboot3handonsdigihaul.auth.UserAccount;
-import com.example.javaspringboot3handonsdigihaul.auth.UserAccountRepository;
+import com.example.javaspringboot3handonsdigihaul.enums.RoleName;
+import com.example.javaspringboot3handonsdigihaul.entity.UserAccount;
+import com.example.javaspringboot3handonsdigihaul.enums.ShipmentStatus;
+import com.example.javaspringboot3handonsdigihaul.repository.UserAccountRepository;
+import com.example.javaspringboot3handonsdigihaul.entity.Shipment;
+import com.example.javaspringboot3handonsdigihaul.entity.ShipmentStatusHistory;
 import com.example.javaspringboot3handonsdigihaul.exception.ForbiddenOperationException;
 import com.example.javaspringboot3handonsdigihaul.exception.ResourceNotFoundException;
-import com.example.javaspringboot3handonsdigihaul.shipment.dto.CreateShipmentRequest;
-import com.example.javaspringboot3handonsdigihaul.shipment.dto.ShipmentResponse;
-import com.example.javaspringboot3handonsdigihaul.shipment.dto.UpdateShipmentRequest;
+import com.example.javaspringboot3handonsdigihaul.repository.ShipmentRepository;
+import com.example.javaspringboot3handonsdigihaul.repository.ShipmentStatusHistoryRepository;
+import com.example.javaspringboot3handonsdigihaul.dto.shipment.CreateShipmentRequest;
+import com.example.javaspringboot3handonsdigihaul.dto.shipment.ShipmentResponse;
+import com.example.javaspringboot3handonsdigihaul.dto.shipment.UpdateShipmentRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;

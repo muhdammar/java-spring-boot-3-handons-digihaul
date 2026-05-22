@@ -1,5 +1,6 @@
-package com.example.javaspringboot3handonsdigihaul.auth;
+package com.example.javaspringboot3handonsdigihaul.repository;
 
+import com.example.javaspringboot3handonsdigihaul.entity.UserAccount;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

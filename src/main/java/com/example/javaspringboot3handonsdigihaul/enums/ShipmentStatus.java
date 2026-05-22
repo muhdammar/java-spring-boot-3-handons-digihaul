@@ -1,4 +1,4 @@
-package com.example.javaspringboot3handonsdigihaul.shipment;
+package com.example.javaspringboot3handonsdigihaul.enums;
 
 public enum ShipmentStatus {
     CREATED,

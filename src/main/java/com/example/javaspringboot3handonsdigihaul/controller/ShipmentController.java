@@ -1,8 +1,9 @@
-package com.example.javaspringboot3handonsdigihaul.shipment;
+package com.example.javaspringboot3handonsdigihaul.controller;
 
-import com.example.javaspringboot3handonsdigihaul.shipment.dto.CreateShipmentRequest;
-import com.example.javaspringboot3handonsdigihaul.shipment.dto.ShipmentResponse;
-import com.example.javaspringboot3handonsdigihaul.shipment.dto.UpdateShipmentRequest;
+import com.example.javaspringboot3handonsdigihaul.service.ShipmentService;
+import com.example.javaspringboot3handonsdigihaul.dto.shipment.CreateShipmentRequest;
+import com.example.javaspringboot3handonsdigihaul.dto.shipment.ShipmentResponse;
+import com.example.javaspringboot3handonsdigihaul.dto.shipment.UpdateShipmentRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

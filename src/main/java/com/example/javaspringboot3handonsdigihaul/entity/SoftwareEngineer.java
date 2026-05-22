@@ -1,4 +1,4 @@
-package com.example.javaspringboot3handonsdigihaul;
+package com.example.javaspringboot3handonsdigihaul.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

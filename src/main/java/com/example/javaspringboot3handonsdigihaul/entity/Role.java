@@ -1,5 +1,6 @@
-package com.example.javaspringboot3handonsdigihaul.auth;
+package com.example.javaspringboot3handonsdigihaul.entity;
 
+import com.example.javaspringboot3handonsdigihaul.enums.RoleName;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -12,7 +13,7 @@ import jakarta.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name = "digihaul_roles")
+@Table(name = "roles")
 public class Role {
 
     @Id

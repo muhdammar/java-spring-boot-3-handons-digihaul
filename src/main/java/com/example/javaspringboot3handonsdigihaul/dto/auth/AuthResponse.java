@@ -1,4 +1,4 @@
-package com.example.javaspringboot3handonsdigihaul.auth.dto;
+package com.example.javaspringboot3handonsdigihaul.dto.auth;
 
 import java.util.Set;
 

@@ -1,9 +1,10 @@
-package com.example.javaspringboot3handonsdigihaul.auth;
+package com.example.javaspringboot3handonsdigihaul.controller;
 
-import com.example.javaspringboot3handonsdigihaul.auth.dto.AuthResponse;
-import com.example.javaspringboot3handonsdigihaul.auth.dto.LoginRequest;
-import com.example.javaspringboot3handonsdigihaul.auth.dto.MessageResponse;
-import com.example.javaspringboot3handonsdigihaul.auth.dto.RegisterRequest;
+import com.example.javaspringboot3handonsdigihaul.service.AuthService;
+import com.example.javaspringboot3handonsdigihaul.dto.auth.AuthResponse;
+import com.example.javaspringboot3handonsdigihaul.dto.auth.LoginRequest;
+import com.example.javaspringboot3handonsdigihaul.dto.auth.MessageResponse;
+import com.example.javaspringboot3handonsdigihaul.dto.auth.RegisterRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

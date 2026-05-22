@@ -1,4 +1,4 @@
-package com.example.javaspringboot3handonsdigihaul.auth.dto;
+package com.example.javaspringboot3handonsdigihaul.dto.auth;
 
 public class RegisterRequest {
 

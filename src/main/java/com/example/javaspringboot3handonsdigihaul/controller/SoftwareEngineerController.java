@@ -1,5 +1,7 @@
-package com.example.javaspringboot3handonsdigihaul;
+package com.example.javaspringboot3handonsdigihaul.controller;
 
+import com.example.javaspringboot3handonsdigihaul.entity.SoftwareEngineer;
+import com.example.javaspringboot3handonsdigihaul.service.SoftwareEngineerService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
