@@ -1,13 +1,13 @@
 services:
   oracle-db:
-    image: gvenzl/oracle-xe:21-slim
-    container_name: oracle-db-21-slim
+    image: gvenzl/oracle-xe:full
+    container_name: oracle-db-21-full
     ports:
       - "1521:1521"
     environment:
       - ORACLE_PASSWORD=Oracle2026
     volumes:
-      - oracle-data:/opt/oracle-21/oradata
+      - oracle-data:/opt/oracle-21-full/oradata
     healthcheck:
       test: ["CMD-SHELL", "sqlplus -s sys/Oracle2026@localhost:1521/XE as sysdba <<< 'SELECT 1 FROM DUAL;'"]
       interval: 30s
