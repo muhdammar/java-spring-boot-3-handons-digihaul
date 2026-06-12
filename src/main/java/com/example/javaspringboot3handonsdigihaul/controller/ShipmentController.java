@@ -2,6 +2,7 @@ package com.example.javaspringboot3handonsdigihaul.controller;
 
 import com.example.javaspringboot3handonsdigihaul.service.ShipmentService;
 import com.example.javaspringboot3handonsdigihaul.dto.shipment.CreateShipmentRequest;
+import com.example.javaspringboot3handonsdigihaul.dto.shipment.PageResponse;
 import com.example.javaspringboot3handonsdigihaul.dto.shipment.ShipmentResponse;
 import com.example.javaspringboot3handonsdigihaul.dto.shipment.UpdateShipmentRequest;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,6 +32,15 @@ public class ShipmentController {
     @GetMapping
     public ResponseEntity<List<ShipmentResponse>> listShipments() {
         return ResponseEntity.ok(shipmentService.listShipments());
+    }
+
+    @GetMapping("/paging")
+    public ResponseEntity<PageResponse<ShipmentResponse>> listShipmentsSimple(
+            @RequestParam(defaultValue = "0") int skipCount,
+            @RequestParam(defaultValue = "10") int takeCount,
+            @RequestParam(required = false) String search
+    ) {
+        return ResponseEntity.ok(shipmentService.listPaginationShipments(skipCount, takeCount, search));
     }
 
     @PostMapping
